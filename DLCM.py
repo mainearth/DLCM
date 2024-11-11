@@ -104,7 +104,6 @@ def read_2dim_txt(txt_file):
 
 
 def NPP_Ag_Bg_allocation(NPP,fBNPP=0.41,fr20=0.65,fr20_100=0.31):
-	#先给个初始化的值
 	fBNPP=0.41
 	fr20=0.65
 	fr20_100=0.31
@@ -128,14 +127,11 @@ def pbias(estimate,observation):
 
 def SoilC_Dynamics_4pools(spin_up_year,NPP):
 	Cab_npp,Croot20_npp,Croot20_100_npp=NPP_Ag_Bg_allocation(NPP)
-
 	C_Young_top,C_Old_top=0,0	
 	C_Young_sub,C_Old_sub=0,0	
-	I_ab_npp_Young=0.04
-	
+	I_ab_npp_Young=0.04	
 	I_root_npp_Young_top=0.03
-	I_root_npp_Young_sub=0.02
-	
+	I_root_npp_Young_sub=0.02	
 	I_Young_top_down=0.04
 	I_Young_sub_down=0.01
 	I_Old_top_down=0.03
@@ -149,16 +145,13 @@ def SoilC_Dynamics_4pools(spin_up_year,NPP):
 	e_Young_Old_top=0.2
 	e_Young_Old_sub=0.1
 	pmax=2.5
-	Km=300   
-	
+	Km=300   	
 	C_Young_top_dynamics=[C_Young_top]
 	C_Old_top_dynamics=[C_Old_top]	
-	C_Young_Old_top_all=[C_Young_top+C_Old_top]
-	
+	C_Young_Old_top_all=[C_Young_top+C_Old_top]	
 	C_Young_sub_dynamics=[C_Young_sub]
 	C_Old_sub_dynamics=[C_Old_sub]	
-	C_Young_Old_sub_all=[C_Young_sub+C_Old_sub]	
-
+	C_Young_Old_sub_all=[C_Young_sub+C_Old_sub]
 	for i in range(spin_up_year):
 		C_Young_top_rate=I_ab_npp_Young*Cab_npp+Croot20_npp*I_root_npp_Young_top-I_Young_top_down*C_Young_top-(1-I_Young_top_down)*C_Young_top*k_Young_top
 		C_Old_top_rate=Cab_npp*(1-I_ab_npp_Young)*e_ab_npp_Old*k_ab_npp+(1-I_Young_top_down)*C_Young_top*e_Young_Old_top*k_Young_top-I_Old_top_down*C_Old_top-(1-I_Old_top_down)*C_Old_top*k_Old_top*(1+calculate_PE(pmax,C_Young_top,Km))   
