@@ -12,6 +12,7 @@ The packages required to run DLCM are:
 - random
 - numba
 - pyswarm
+- pandas
 ```
 ## How to run DLCM
 We provide the source code of DLCM, and users can directly modify the input and output data paths in the Python 3 environment to run the model.
