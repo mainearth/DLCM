@@ -1,0 +1,12 @@
+parameters,value
+I_ab_npp_Young,0.04
+I_root_npp_Young_top,0.03
+I_root_npp_Young_sub,0.02
+I_Young_top_down,0.04
+I_Young_sub_down,0.01
+k_Young_top_down,0.02
+k_Young_sub_down,0.001
+e_Young_Old_top,0.2
+e_Young_Old_sub,0.1
+pmax,-0.5
+Km,500

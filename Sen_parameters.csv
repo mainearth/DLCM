@@ -1,0 +1,7 @@
+parameters,lower_boundary,upper_boundary
+I_Old_top_down,0,0.05
+I_Old_sub_down,0,0.05
+k_ab_npp,0.1,1
+k_Old_top,0.000001,0.1
+k_Old_sub,0.000001,0.1
+e_ab_npp_Old,0.2,0.8
